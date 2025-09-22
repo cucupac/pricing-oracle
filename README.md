@@ -3,7 +3,7 @@
 This repository implements an MVP for a **historically-informed price oracle** for ETH/USDC trades.  
 It combines a **TypeScript pricing oracle API** with a **Python prediction engine** backed by a neural network.
 
-See the accompanying [paper (PDF)](./docs/paper.pdf) for the theory behind this service and related ideas.
+See the accompanying [paper (PDF)](./docs/paper.pdf) for the **theory** behind this service and related ideas.
 
 ---
 
@@ -156,7 +156,7 @@ curl -X POST http://localhost:8000/predict \
 **⚠️ Note**: This MVP uses **synthetic training data**.
 A production service would require real execution data collected over time.
 
-For details on data generation, see [prediction_engine/app/core/prediction/data/README.md](./prediction_engine/app/core/prediction/data/README.md).
+For details on how the synthetic data was generated, see [this README.](./prediction_engine/app/core/prediction/data/README.md).
 
 ---
 
