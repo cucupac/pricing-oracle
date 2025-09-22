@@ -1,0 +1,9 @@
+export const Env = {
+  PORT: Number(process.env.PORT ?? 8080),
+  ODOS_BASE_URL: process.env.ODOS_BASE_URL ?? "https://api.odos.xyz",
+  ODOS_USER_ADDR: (process.env.ODOS_USER_ADDR ??
+    "0xa9a1c73e1e90b945fcc3507881A5E1A437EAd162") as `0x${string}`,
+  PREDICTOR_BASE_URL: process.env.PREDICTOR_BASE_URL ?? "http://127.0.0.1:8000",
+  HTTP_TIMEOUT_MS: Number(process.env.HTTP_TIMEOUT_MS ?? 10000),
+  HTTP_RETRIES: Number(process.env.HTTP_RETRIES ?? 2)
+};

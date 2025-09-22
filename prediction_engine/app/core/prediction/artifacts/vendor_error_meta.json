@@ -1,0 +1,77 @@
+{
+  "feature_cols": [
+    "vendor_onehot_odos",
+    "vendor_onehot_1inch",
+    "log_amount_in_usd",
+    "log_output_amount_quote",
+    "quote_gas_usd",
+    "hop_count",
+    "log_min_pool_tvl_usd",
+    "log_amount_x_hops",
+    "odos_x_log_amount",
+    "inch_x_log_amount",
+    "odos_x_hops",
+    "inch_x_hops"
+  ],
+  "target_col": "predicted_adjustment_factor",
+  "interactions": [
+    "log_amount_x_hops",
+    "odos_x_log_amount",
+    "inch_x_log_amount",
+    "odos_x_hops",
+    "inch_x_hops"
+  ],
+  "vendor_map": {
+    "odos": 0,
+    "1inch": 1
+  },
+  "note": "All features are from quote-time; token amounts transformed with log1p using proper decimals; interactions capture vendor/size/hops effects.",
+  "scaler": {
+    "mean": [
+      0.4977968633174896,
+      0.502203106880188,
+      7.019338607788086,
+      1.4521379470825195,
+      3.4982333183288574,
+      2.503234386444092,
+      12.816375732421875,
+      17.52797508239746,
+      3.504063367843628,
+      3.5146477222442627,
+      1.242687463760376,
+      1.2605469226837158
+    ],
+    "std": [
+      0.49999067187309265,
+      0.49999067187309265,
+      4.433596611022949,
+      1.972376823425293,
+      0.8657305836677551,
+      1.1185462474822998,
+      0.992982804775238,
+      14.411548614501953,
+      4.711574077606201,
+      4.701550483703613,
+      1.4760825634002686,
+      1.4851150512695312
+    ]
+  },
+  "loss": "L1Loss",
+  "hidden_sizes": [
+    32,
+    16
+  ],
+  "dropout": 0.1,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "kfolds": 5,
+  "max_epochs": 100,
+  "patience": 8,
+  "seed": 42,
+  "test_loss_l1": 0.11405254734754562,
+  "bounded_output_max": 0.04,
+  "target_normalization": true,
+  "target_norm_divisor": 0.04,
+  "interactions_added": true,
+  "weights_path": "app/core/prediction/weights/vendor_error_mlp.pt"
+}

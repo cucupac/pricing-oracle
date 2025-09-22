@@ -1,0 +1,23 @@
+{
+  "name": "pricing-oracle",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon --watch app --ext ts,json --exec ts-node app/entrypoints/api/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/app/entrypoints/api/server.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "axios": "^1.7.4",
+    "express": "^4.19.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.12",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}
